@@ -38,7 +38,6 @@ The `modules/helix.nix` module includes:
 - NEUI cluster for normal/select modes
 - Restored `HJKL` command mappings
 - GoTo/View mode optimizations
-- Catppuccin Latte theme integration
 
 #### Zed Implementation
 
@@ -47,7 +46,14 @@ The `modules/zed.nix` module includes:
 - Helix-mode emulation with NEUI cluster
 - Normal/select mode bindings parity with Helix
 - Relative line numbers and cursor configuration
-- Catppuccin theme support
+
+#### Neovim Implementation
+
+The `modules/neovim-colemak.nix` module includes:
+
+- NEUI cluster navigation for normal/visual modes
+- Restored `HJKL` command mappings for Colemak layout
+- Integration with Neovim's built-in keybinding system
 
 ## Available Modules
 
@@ -61,6 +67,10 @@ navigation and restored displaced commands for Colemak layout users.
 Zed editor Colemak keybinding configuration with Helix-mode emulation. Includes
 normal and select mode bindings for Colemak layout.
 
+### `modules/neovim-colemak.nix`
+
+Neovim editor Colemak keybinding configuration. Implements the NEUI cluster navigation and restored displaced commands for Colemak layout users.
+
 ## Usage
 
 Import the modules into your Home Manager configuration:
@@ -72,6 +82,7 @@ Import the modules into your Home Manager configuration:
   imports = [
     (inputs.colemak.homeManagerModules.helix)
     (inputs.colemak.homeManagerModules.zed)
+    (inputs.colemak.homeManagerModules.neovim)
   ];
 }
 ```

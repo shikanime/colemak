@@ -81,6 +81,7 @@
       flake = {
         homeManagerModules = {
           helix = import ./modules/helix.nix;
+          neovim = import ./modules/neovim.nix;
           zed = import ./modules/zed.nix;
         };
       };
