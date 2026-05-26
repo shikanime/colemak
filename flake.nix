@@ -79,8 +79,8 @@
         "aarch64-darwin"
       ];
       flake = {
-        homeManagerModule = import ./modules/default.nix;
-        homeManagerModules = {
+        homeModule = import ./modules/default.nix;
+        homeModules = {
           default = import ./modules/default.nix;
           helix = import ./modules/helix.nix;
           neovim = import ./modules/neovim.nix;

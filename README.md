@@ -81,9 +81,9 @@ Import the modules into your Home Manager configuration:
 
 {
   imports = [
-    (inputs.colemak.homeManagerModules.helix)
-    (inputs.colemak.homeManagerModules.zed)
-    (inputs.colemak.homeManagerModules.neovim)
+    (inputs.colemak.homeModules.helix)
+    (inputs.colemak.homeModules.zed)
+    (inputs.colemak.homeModules.neovim)
   ];
 }
 ```
