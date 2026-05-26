@@ -15,7 +15,7 @@ in
   config = mkIf cfg.enable {
     programs.neovim = {
       enable = true;
-      extraLuaConfig = ''
+      initLua = ''
         -- Core Navigation (NEUI Cluster)
         -- Normal Mode
         vim.keymap.set('n', 'n', 'h', { noremap = true })

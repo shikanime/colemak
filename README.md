@@ -41,11 +41,10 @@ The `modules/helix.nix` module includes:
 
 #### Zed Implementation
 
-The `modules/zed.nix` module includes:
+The `modules/zed-editor.nix` module includes:
 
 - Helix-mode emulation with NEUI cluster
 - Normal/select mode bindings parity with Helix
-- Relative line numbers and cursor configuration
 
 #### Neovim Implementation
 
@@ -57,34 +56,56 @@ The `modules/neovim.nix` module includes:
 
 ## Available Modules
 
-### `modules/helix.nix`
+### `modules/default.nix`
+
+Imports all editor modules and exposes the shared option namespace under
+`colemak.*`.
+
+### `modules/helix.nix` (`homeModules.helix`)
 
 Helix editor Colemak keybinding configuration. Implements the NEUI cluster
 navigation and restored displaced commands for Colemak layout users.
 
-### `modules/zed.nix`
+### `modules/zed-editor.nix` (`homeModules."zed-edit"`)
 
 Zed editor Colemak keybinding configuration with Helix-mode emulation. Includes
 normal and select mode bindings for Colemak layout.
 
-### `modules/neovim.nix`
+### `modules/neovim.nix` (`homeModules.neovim`)
 
 Neovim editor Colemak keybinding configuration. Implements the NEUI cluster
 navigation and restored displaced commands for Colemak layout users.
 
 ## Usage
 
-Import the modules into your Home Manager configuration:
+Import the modules into your Home Manager configuration, then enable either the
+umbrella switch (`colemak.enable`) or individual editor switches.
+
+### Enable Everything
 
 ```nix
 { config, pkgs, ... }:
 
 {
   imports = [
-    (inputs.colemak.homeModules.helix)
-    (inputs.colemak.homeModules.zed)
-    (inputs.colemak.homeModules.neovim)
+    inputs.colemak.homeModules.default
   ];
+
+  colemak.enable = true;
+}
+```
+
+### Enable A Single Editor
+
+```nix
+{ config, pkgs, ... }:
+
+{
+  imports = [
+    inputs.colemak.homeModules.default
+  ];
+
+  colemak.neovim.enable = true;
 }
 ```
 
