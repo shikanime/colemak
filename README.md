@@ -66,7 +66,7 @@ Imports all editor modules and exposes the shared option namespace under
 Helix editor Colemak keybinding configuration. Implements the NEUI cluster
 navigation and restored displaced commands for Colemak layout users.
 
-### `modules/zed-editor.nix` (`homeModules."zed-edit"`)
+### `modules/zed-editor.nix` (`homeModules.zed-editor`)
 
 Zed editor Colemak keybinding configuration with Helix-mode emulation. Includes
 normal and select mode bindings for Colemak layout.
