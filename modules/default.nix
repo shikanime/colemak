@@ -1,7 +1,9 @@
+
 {
   imports = [
+    ./colemak.nix
     ./helix.nix
     ./neovim.nix
-    ./zed.nix
+    ./zed-editor.nix
   ];
 }
