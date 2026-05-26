@@ -1,5 +1,18 @@
+{ config, lib, ... }:
+
+with lib;
+
+let
+  cfg = config.colemak.neovim;
+in
 {
-  config = {
+  options.colemak.neovim.enable = mkOption {
+    type = types.bool;
+    default = config.colemak.enable;
+    description = "Enable Colemak keybindings for Neovim.";
+  };
+
+  config = mkIf cfg.enable {
     programs.neovim = {
       enable = true;
       extraLuaConfig = ''
